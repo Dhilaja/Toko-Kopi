@@ -538,7 +538,7 @@ class TextScramble {
 }
 
 // =====================
-// INFINTE MARQUEE
+// INFINITE MARQUEE
 // =====================
 function initMarquee() {
   const marqueeContent = document.querySelector('.marquee-content')
@@ -549,13 +549,167 @@ function initMarquee() {
 }
 
 // =====================
+// MOBILE MENU
+// =====================
+function openMobileMenu() {
+  const menu = document.getElementById('mobile-menu')
+  const drawer = menu.querySelector('.menu-drawer')
+  const overlay = menu.querySelector('.menu-overlay')
+  if (menu && drawer) {
+    menu.classList.remove('pointer-events-none')
+    overlay.classList.remove('opacity-0')
+    drawer.classList.remove('translate-x-full')
+    drawer.classList.add('translate-x-0')
+  }
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById('mobile-menu')
+  const drawer = menu.querySelector('.menu-drawer')
+  const overlay = menu.querySelector('.menu-overlay')
+  if (menu && drawer) {
+    menu.classList.add('pointer-events-none')
+    overlay.classList.add('opacity-0')
+    drawer.classList.add('translate-x-full')
+    drawer.classList.remove('translate-x-0')
+  }
+}
+
+window.openMobileMenu = openMobileMenu
+window.closeMobileMenu = closeMobileMenu
+
+// =====================
+// GALLERY MODAL
+// =====================
+const galleryImages = [
+  'https://images.unsplash.com/photo-1501339847302-9a4b87030454?w=800&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=800&fit=crop'
+]
+let currentGalleryIndex = 0
+
+function openGallery(index) {
+  currentGalleryIndex = index
+  const modal = document.getElementById('gallery-modal')
+  const img = document.getElementById('gallery-image')
+  if (modal && img) {
+    img.src = galleryImages[index]
+    modal.classList.remove('hidden')
+    modal.classList.add('flex')
+  }
+}
+
+function closeGallery() {
+  const modal = document.getElementById('gallery-modal')
+  if (modal) {
+    modal.classList.add('hidden')
+    modal.classList.remove('flex')
+  }
+}
+
+function nextGallery() {
+  currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length
+  const img = document.getElementById('gallery-image')
+  if (img) img.src = galleryImages[currentGalleryIndex]
+}
+
+function prevGallery() {
+  currentGalleryIndex = (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length
+  const img = document.getElementById('gallery-image')
+  if (img) img.src = galleryImages[currentGalleryIndex]
+}
+
+window.openGallery = openGallery
+window.closeGallery = closeGallery
+window.nextGallery = nextGallery
+window.prevGallery = prevGallery
+
+// =====================
+// MENU FILTER
+// =====================
+function filterMenu(category, event) {
+  const cards = document.querySelectorAll('#menu-grid > div')
+  const buttons = document.querySelectorAll('.menu-filter')
+  
+  buttons.forEach(btn => {
+    btn.classList.remove('bg-coffee-700', 'text-coffee-50')
+    btn.classList.add('bg-coffee-200', 'dark:bg-coffee-800', 'text-coffee-700', 'dark:text-coffee-200')
+  })
+  
+  if (event && event.target) {
+    event.target.classList.remove('bg-coffee-200', 'dark:bg-coffee-800', 'text-coffee-700', 'dark:text-coffee-200')
+    event.target.classList.add('bg-coffee-700', 'text-coffee-50')
+  }
+  
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.classList.remove('hidden')
+      card.classList.add('block')
+    } else {
+      card.classList.add('hidden')
+      card.classList.remove('block')
+    }
+  })
+}
+
+window.filterMenu = filterMenu
+
+// =====================
+// RESERVATION FORM
+// =====================
+function submitReservation(e) {
+  e.preventDefault()
+  alert('Terima kasih! Reservasi Anda akan kami konfirmasi via telepon.')
+}
+
+window.submitReservation = submitReservation
+
+// =====================
+// NEWSLETTER
+// =====================
+function subscribeNewsletter(e) {
+  e.preventDefault()
+  const input = e.target.querySelector('input')
+  if (input && input.value) {
+    alert('Terima kasih telah subscribe! Anda akan menerima promo terbaru.')
+    input.value = ''
+  }
+}
+
+window.subscribeNewsletter = subscribeNewsletter
+
+// =====================
+// LOADING PROGRESS
+// =====================
+function initLoadingProgress() {
+  const progress = document.querySelector('.loading-progress')
+  if (progress) {
+    let width = 0
+    const interval = setInterval(() => {
+      width += Math.random() * 30
+      if (width >= 100) {
+        width = 100
+        clearInterval(interval)
+      }
+      progress.style.width = width + '%'
+    }, 200)
+  }
+}
+
+// =====================
 // MAIN INITIALIZATION
 // =====================
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize loading progress
+  initLoadingProgress()
+  
   // Initialize loading screen
   setTimeout(() => {
     hideLoadingScreen()
-  }, 2000)
+  }, 2500)
   
   // Initialize custom cursor
   const cursor = new CustomCursor()

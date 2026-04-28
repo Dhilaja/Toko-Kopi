@@ -480,3 +480,64 @@ body {
   background-color: var(--coffee-950);
   color: var(--coffee-100);
 }
+
+/* Mobile Menu */
+.mobile-menu {
+  transition: all 0.3s ease;
+}
+
+.menu-overlay {
+  transition: opacity 0.3s ease;
+}
+
+.menu-drawer {
+  transition: transform 0.3s ease;
+}
+
+/* Gallery Modal */
+#gallery-modal {
+  transition: opacity 0.3s ease;
+}
+
+#gallery-modal.hidden {
+  display: none;
+}
+
+/* Menu Filter */
+.menu-filter {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.menu-filter:hover {
+  transform: scale(1.05);
+}
+
+.menu-filter.active {
+  background-color: var(--coffee-700);
+  color: var(--coffee-50);
+}
+
+/* Responsive Image */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) {
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none !important;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
+}
