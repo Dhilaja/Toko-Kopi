@@ -9,6 +9,8 @@ import gsap from 'gsap'
 // Custom Cursor
 class CustomCursor {
   constructor() {
+    if (window.matchMedia('(hover: none)').matches) return
+    
     this.cursor = document.createElement('div')
     this.cursor.className = 'custom-cursor'
     this.dot = document.createElement('div')
@@ -32,9 +34,9 @@ class CustomCursor {
       this.mouseY = e.clientY
     })
     
-    document.querySelectorAll('a, button, .interactive').forEach(el => {
-      el.addEventListener('mouseenter', () => this.cursor.classList.add('hovered'))
-      el.addEventListener('mouseleave', () => this.cursor.classList.remove('hovered'))
+    document.querySelectorAll('a, button, .interactive, .gradient-card').forEach(el => {
+      el.addEventListener('mouseenter', () => this.cursor?.classList.add('hovered'))
+      el.addEventListener('mouseleave', () => this.cursor?.classList.remove('hovered'))
     })
     
     this.animate()
@@ -46,8 +48,12 @@ class CustomCursor {
     this.dotX += (this.mouseX - this.dotX) * 0.3
     this.dotY += (this.mouseY - this.dotY) * 0.3
     
-    this.cursor.style.transform = `translate(${this.cursorX - 10}px, ${this.cursorY - 10}px)`
-    this.dot.style.transform = `translate(${this.dotX - 3}px, ${this.dotY - 3}px)`
+    if (this.cursor) {
+      this.cursor.style.transform = `translate(${this.cursorX - 10}px, ${this.cursorY - 10}px)`
+    }
+    if (this.dot) {
+      this.dot.style.transform = `translate(${this.dotX - 3}px, ${this.dotY - 3}px)`
+    }
     
     requestAnimationFrame(() => this.animate())
   }
@@ -58,6 +64,9 @@ class MagneticButton {
   constructor(element) {
     this.element = element
     this.strength = 0.3
+    
+    if (window.matchMedia('(hover: none)').matches) return
+    
     this.animate()
   }
   
@@ -90,10 +99,8 @@ class MagneticButton {
 function createRipple(x, y) {
   const ripple = document.createElement('div')
   ripple.className = 'ripple'
-  ripple.style.left = `${x}px`
-  ripple.style.top = `${y}px`
-  ripple.style.width = '100px'
-  ripple.style.height = '100px'
+  ripple.style.left = `${x - 50}px`
+  ripple.style.top = `${y - 50}px`
   document.body.appendChild(ripple)
   
   setTimeout(() => ripple.remove(), 600)
@@ -115,7 +122,7 @@ class SplitText {
     
     const spans = this.element.querySelectorAll('span')
     spans.forEach((span, i) => {
-      span.style.animationDelay = `${i * 0.05}s`
+      span.style.animationDelay = `${i * 0.03}s`
     })
     
     setTimeout(() => {
@@ -124,7 +131,9 @@ class SplitText {
   }
 }
 
-// Scroll reveal animation
+// =====================
+// SCROLL ANIMATIONS
+// =====================
 function setupScrollReveal() {
   const elements = document.querySelectorAll('.fade-in-up, .image-reveal')
   
@@ -132,14 +141,23 @@ function setupScrollReveal() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible')
+        
         if (entry.target.classList.contains('image-reveal')) {
           setTimeout(() => {
             entry.target.classList.add('revealed')
           }, 300)
         }
+        
+        // Stagger animation for child elements
+        const children = entry.target.querySelectorAll('.stagger-item')
+        children.forEach((child, i) => {
+          setTimeout(() => {
+            child.classList.add('visible')
+          }, i * 100)
+        })
       }
     })
-  }, { threshold: 0.1 })
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' })
   
   elements.forEach(el => observer.observe(el))
 }
@@ -150,7 +168,8 @@ function setupStatsCounter() {
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+        entry.target.classList.add('counted')
         const target = parseInt(entry.target.dataset.count)
         const obj = { value: 0 }
         
@@ -159,7 +178,12 @@ function setupStatsCounter() {
           duration: 2,
           ease: 'power2.out',
           onUpdate: function() {
-            entry.target.textContent = Math.round(obj.value)
+            const val = Math.round(obj.value)
+            if (target >= 1000) {
+              entry.target.textContent = (val / 1000).toFixed(val >= 10000 ? 0 : 1) + 'K+'
+            } else {
+              entry.target.textContent = val + (target === 98 ? '%' : '+')
+            }
           }
         })
         observer.unobserve(entry.target)
@@ -176,9 +200,9 @@ function setupStickyHeader() {
   
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header.classList.add('scrolled')
+      header?.classList.add('scrolled')
     } else {
-      header.classList.remove('scrolled')
+      header?.classList.remove('scrolled')
     }
   })
 }
@@ -188,7 +212,7 @@ function setupDarkMode() {
   const toggle = document.querySelector('.theme-toggle')
   let isDark = false
   
-  toggle.addEventListener('click', () => {
+  toggle?.addEventListener('click', () => {
     isDark = !isDark
     document.body.classList.toggle('dark')
     
@@ -201,7 +225,9 @@ function setupDarkMode() {
   })
 }
 
-// 3D Coffee Bean Scene
+// =====================
+// 3D COFFEE BEAN SCENE
+// =====================
 class CoffeeScene {
   constructor(container) {
     this.container = container
@@ -245,29 +271,24 @@ class CoffeeScene {
     keyLight.position.set(5, 5, 5)
     this.scene.add(keyLight)
     
-    const fillLight = new THREE.DirectionalLight(0xc28252, 0.5)
+    const fillLight = new THREE.DirectionalLight(0xE0C097, 0.5)
     fillLight.position.set(-5, 0, 5)
     this.scene.add(fillLight)
     
-    const rimLight = new THREE.DirectionalLight(0xffffff, 0.3)
-    rimLight.position.set(0, -5, -5)
-    this.scene.add(rimLight)
-    
-    const pointLight = new THREE.PointLight(0xc28252, 0.5, 10)
+    const pointLight = new THREE.PointLight(0xE0C097, 0.5, 10)
     pointLight.position.set(2, 2, 2)
     this.scene.add(pointLight)
   }
   
   createCoffeeBeanGeometry() {
     const shape = new THREE.Shape()
-    const x = 0, y = 0
     const radius = 0.4
     
-    shape.moveTo(x, y - radius)
-    shape.bezierCurveTo(x + radius * 0.6, y - radius, x + radius, y - radius * 0.6, x + radius, y)
-    shape.bezierCurveTo(x + radius, y + radius * 0.6, x + radius * 0.6, y + radius, x, y + radius)
-    shape.bezierCurveTo(x - radius * 0.6, y + radius, x - radius, y + radius * 0.6, x - radius, y)
-    shape.bezierCurveTo(x - radius, y - radius * 0.6, x - radius * 0.6, y - radius, x, y - radius)
+    shape.moveTo(0, -radius)
+    shape.bezierCurveTo(radius * 0.6, -radius, radius, -radius * 0.6, radius, 0)
+    shape.bezierCurveTo(radius, radius * 0.6, radius * 0.6, radius, 0, radius)
+    shape.bezierCurveTo(-radius * 0.6, radius, -radius, radius * 0.6, -radius, 0)
+    shape.bezierCurveTo(-radius, -radius * 0.6, -radius * 0.6, -radius, 0, -radius)
     
     const extrudeSettings = {
       depth: 0.25,
@@ -285,7 +306,7 @@ class CoffeeScene {
     const beanGeometry = this.createCoffeeBeanGeometry()
     
     const beanMaterial = new THREE.MeshStandardMaterial({
-      color: 0x5c3d30,
+      color: 0x2D2424,
       roughness: 0.4,
       metalness: 0.1
     })
@@ -332,7 +353,7 @@ class CoffeeScene {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
     
     const material = new THREE.PointsMaterial({
-      color: 0xc28252,
+      color: 0xE0C097,
       size: 0.02,
       transparent: true,
       opacity: 0.6
@@ -367,11 +388,10 @@ class CoffeeScene {
     this.camera.position.y += (this.targetY - this.camera.position.y) * 0.05
     this.camera.lookAt(this.scene.position)
     
-    this.beans.forEach((bean, i) => {
+    this.beans?.forEach((bean) => {
       bean.mesh.rotation.x += bean.rotationSpeed.x
       bean.mesh.rotation.y += bean.rotationSpeed.y
       bean.mesh.rotation.z += bean.rotationSpeed.z
-      
       bean.mesh.position.y += Math.sin(time * bean.floatSpeed + bean.floatOffset) * 0.002
     })
     
@@ -409,60 +429,12 @@ class ProductGlow {
   }
 }
 
-// =====================
-// LOADING SCREEN
-// =====================
-function hideLoadingScreen() {
-  const loadingScreen = document.querySelector('.loading-screen')
-  
-  gsap.to(loadingScreen, {
-    opacity: 0,
-    duration: 1,
-    ease: 'power2.inOut',
-    onComplete: () => {
-      loadingScreen.style.display = 'none'
-    }
-  })
-}
-
-// =====================
-// SMOOTH SCROLL (Inertia)
-// =====================
-class SmoothScroll {
-  constructor() {
-    this.target = 0
-    this.current = 0
-    this.ease = 0.1
-    
-    this.init()
-  }
-  
-  init() {
-    window.addEventListener('scroll', () => {
-      this.target = window.scrollY
-    })
-    
-    this.animate()
-  }
-  
-  animate() {
-    this.current += (this.target - this.current) * this.ease
-    
-    if (Math.abs(this.target - this.current) > 0.1) {
-      window.scrollTo(0, this.current)
-    }
-    
-    requestAnimationFrame(() => this.animate())
-  }
-}
-
-// =====================
-// 3D TILT EFFECT
-// =====================
+// 3D Tilt Effect
 class TiltEffect {
   constructor(element) {
     this.element = element
-    this.rotation = { x: 0, y: 0 }
+    
+    if (window.matchMedia('(hover: none)').matches) return
     
     this.element.addEventListener('mousemove', (e) => this.onMouseMove(e))
     this.element.addEventListener('mouseleave', () => this.onMouseLeave())
@@ -497,54 +469,33 @@ class TiltEffect {
 }
 
 // =====================
-// TEXT SCRAMBLE EFFECT
+// LOADING SCREEN
 // =====================
-class TextScramble {
-  constructor(element) {
-    this.element = element
-    this.originalText = element.textContent
-    this.characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()'
-    this.isHovered = false
-    
-    this.element.addEventListener('mouseenter', () => this.onHover())
-    this.element.addEventListener('mouseleave', () => this.onLeave())
-  }
+function hideLoadingScreen() {
+  const loadingScreen = document.querySelector('.loading-screen')
   
-  onHover() {
-    this.isHovered = true
-    this.scramble()
-  }
-  
-  onLeave() {
-    this.isHovered = false
-    this.element.textContent = this.originalText
-  }
-  
-  scramble() {
-    if (!this.isHovered) return
-    
-    const text = this.originalText.split('').map((char, i) => {
-      if (char === ' ') return ' '
-      if (Math.random() > 0.5) {
-        return this.characters[Math.floor(Math.random() * this.characters.length)]
-      }
-      return char
-    })
-    
-    this.element.textContent = text.join('')
-    
-    setTimeout(() => this.scramble(), 50)
-  }
+  gsap.to(loadingScreen, {
+    opacity: 0,
+    duration: 1,
+    ease: 'power2.inOut',
+    onComplete: () => {
+      loadingScreen.style.display = 'none'
+    }
+  })
 }
 
-// =====================
-// INFINITE MARQUEE
-// =====================
-function initMarquee() {
-  const marqueeContent = document.querySelector('.marquee-content')
-  if (marqueeContent) {
-    const original = marqueeContent.innerHTML
-    marqueeContent.innerHTML = original + original
+function initLoadingProgress() {
+  const progress = document.querySelector('.loading-progress')
+  if (progress) {
+    let width = 0
+    const interval = setInterval(() => {
+      width += Math.random() * 25
+      if (width >= 100) {
+        width = 100
+        clearInterval(interval)
+      }
+      progress.style.width = width + '%'
+    }, 200)
   }
 }
 
@@ -553,11 +504,11 @@ function initMarquee() {
 // =====================
 function openMobileMenu() {
   const menu = document.getElementById('mobile-menu')
-  const drawer = menu.querySelector('.menu-drawer')
-  const overlay = menu.querySelector('.menu-overlay')
+  const drawer = menu?.querySelector('.menu-drawer')
+  const overlay = menu?.querySelector('.menu-overlay')
   if (menu && drawer) {
     menu.classList.remove('pointer-events-none')
-    overlay.classList.remove('opacity-0')
+    overlay?.classList.remove('opacity-0')
     drawer.classList.remove('translate-x-full')
     drawer.classList.add('translate-x-0')
   }
@@ -565,11 +516,11 @@ function openMobileMenu() {
 
 function closeMobileMenu() {
   const menu = document.getElementById('mobile-menu')
-  const drawer = menu.querySelector('.menu-drawer')
-  const overlay = menu.querySelector('.menu-overlay')
+  const drawer = menu?.querySelector('.menu-drawer')
+  const overlay = menu?.querySelector('.menu-overlay')
   if (menu && drawer) {
     menu.classList.add('pointer-events-none')
-    overlay.classList.add('opacity-0')
+    overlay?.classList.add('opacity-0')
     drawer.classList.add('translate-x-full')
     drawer.classList.remove('translate-x-0')
   }
@@ -630,24 +581,29 @@ window.prevGallery = prevGallery
 // =====================
 // MENU FILTER
 // =====================
-function filterMenu(category, event) {
+function filterMenu(category) {
   const cards = document.querySelectorAll('#menu-grid > div')
   const buttons = document.querySelectorAll('.menu-filter')
   
   buttons.forEach(btn => {
-    btn.classList.remove('bg-coffee-700', 'text-coffee-50')
-    btn.classList.add('bg-coffee-200', 'dark:bg-coffee-800', 'text-coffee-700', 'dark:text-coffee-200')
+    btn.classList.remove('bg-espresso-900', 'text-latte-300')
+    btn.classList.add('bg-lattee-200', 'dark:bg-espresso-800', 'text-espresso-900', 'dark:text-latte-300')
   })
   
-  if (event && event.target) {
-    event.target.classList.remove('bg-coffee-200', 'dark:bg-coffee-800', 'text-coffee-700', 'dark:text-coffee-200')
-    event.target.classList.add('bg-coffee-700', 'text-coffee-50')
+  const activeBtn = document.querySelector('.menu-filter.active')
+  if (activeBtn) {
+    activeBtn.classList.remove('bg-lattee-200', 'dark:bg-espresso-800', 'text-espresso-900', 'dark:text-latte-300')
+    activeBtn.classList.add('bg-espresso-900', 'text-latte-300')
   }
   
   cards.forEach(card => {
     if (category === 'all' || card.dataset.category === category) {
       card.classList.remove('hidden')
       card.classList.add('block')
+      gsap.fromTo(card, 
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.3 }
+      )
     } else {
       card.classList.add('hidden')
       card.classList.remove('block')
@@ -658,11 +614,70 @@ function filterMenu(category, event) {
 window.filterMenu = filterMenu
 
 // =====================
+// TESTIMONIAL SLIDER
+// =====================
+class TestimonialSlider {
+  constructor() {
+    this.slides = document.querySelectorAll('.testimonial-slide')
+    this.currentIndex = 0
+    this.autoPlayInterval = null
+    
+    if (this.slides.length === 0) return
+    
+    this.init()
+  }
+  
+  init() {
+    this.showSlide(0)
+    this.startAutoPlay()
+    
+    // Navigation buttons
+    const nextBtn = document.getElementById('testimonial-next')
+    const prevBtn = document.getElementById('testimonial-prev')
+    
+    nextBtn?.addEventListener('click', () => this.next())
+    prevBtn?.addEventListener('click', () => this.prev())
+  }
+  
+  showSlide(index) {
+    this.slides.forEach((slide, i) => {
+      slide.classList.remove('active', 'prev')
+      if (i === index) {
+        slide.classList.add('active')
+      } else if (i < index) {
+        slide.classList.add('prev')
+      }
+    })
+    this.currentIndex = index
+  }
+  
+  next() {
+    const nextIndex = (this.currentIndex + 1) % this.slides.length
+    this.showSlide(nextIndex)
+  }
+  
+  prev() {
+    const prevIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length
+    this.showSlide(prevIndex)
+  }
+  
+  startAutoPlay() {
+    this.autoPlayInterval = setInterval(() => this.next(), 5000)
+  }
+  
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval)
+    }
+  }
+}
+
+// =====================
 // RESERVATION FORM
 // =====================
 function submitReservation(e) {
   e.preventDefault()
-  alert('Terima kasih! Reservasi Anda akan kami konfirmasi via telepon.')
+  alert('Terima kasih! Reservasi Anda akan kami konfirmasi via WhatsApp.')
 }
 
 window.submitReservation = submitReservation
@@ -682,20 +697,13 @@ function subscribeNewsletter(e) {
 window.subscribeNewsletter = subscribeNewsletter
 
 // =====================
-// LOADING PROGRESS
+// INFINITE MARQUEE
 // =====================
-function initLoadingProgress() {
-  const progress = document.querySelector('.loading-progress')
-  if (progress) {
-    let width = 0
-    const interval = setInterval(() => {
-      width += Math.random() * 30
-      if (width >= 100) {
-        width = 100
-        clearInterval(interval)
-      }
-      progress.style.width = width + '%'
-    }, 200)
+function initMarquee() {
+  const marqueeContent = document.querySelector('.marquee-content')
+  if (marqueeContent) {
+    const original = marqueeContent.innerHTML
+    marqueeContent.innerHTML = original + original
   }
 }
 
@@ -703,64 +711,55 @@ function initLoadingProgress() {
 // MAIN INITIALIZATION
 // =====================
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize loading progress
+  // Loading
   initLoadingProgress()
+  setTimeout(() => hideLoadingScreen(), 2500)
   
-  // Initialize loading screen
-  setTimeout(() => {
-    hideLoadingScreen()
-  }, 2500)
+  // Custom cursor
+  new CustomCursor()
   
-  // Initialize custom cursor
-  const cursor = new CustomCursor()
-  
-  // Initialize smooth scroll
-  // new SmoothScroll()
-  
-  // Setup scroll animations
+  // Scroll animations
   setupScrollReveal()
   setupStatsCounter()
   setupStickyHeader()
   setupDarkMode()
   initMarquee()
   
-  // Initialize 3D scene
+  // 3D scene
   const hero3D = document.getElementById('hero-3d')
   if (hero3D) {
     new CoffeeScene(hero3D)
   }
   
-  // Initialize magnetic buttons
+  // Magnetic buttons
   document.querySelectorAll('.magnetic-btn').forEach(btn => {
     new MagneticButton(btn)
   })
   
-  // Initialize product glow cards
+  // Product glow cards
   document.querySelectorAll('.gradient-card').forEach(card => {
     new ProductGlow(card)
   })
   
-  // Initialize tilt effects
+  // Tilt effects
   document.querySelectorAll('.tilt-element').forEach(el => {
     new TiltEffect(el)
   })
   
-  // Initialize text scrambles
-  document.querySelectorAll('.scramble-text').forEach(el => {
-    new TextScramble(el)
-  })
-  
-  // Initialize split text animations
+  // Split text
   document.querySelectorAll('.split-text').forEach(el => {
     new SplitText(el)
   })
   
-  // Click ripple effect
+  // Click ripple
   document.addEventListener('click', (e) => {
     createRipple(e.clientX, e.clientY)
   })
   
-  // Animate hero text on load
+  // Testimonial slider
+  new TestimonialSlider()
+  
+  // Hero animations
   gsap.from('.hero-title .char', {
     y: 100,
     opacity: 0,
@@ -786,17 +785,15 @@ document.addEventListener('DOMContentLoaded', () => {
     delay: 1.5
   })
   
-  // Parallax effect on scroll
+  // Parallax
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset
-    const parallaxElements = document.querySelectorAll('.parallax-bg')
-    
-    parallaxElements.forEach(el => {
+    document.querySelectorAll('.parallax-bg').forEach(el => {
       el.style.transform = `translateY(${scrolled * 0.5}px)`
     })
   })
 })
 
-// Make GSAP globally available
+// Make GSAP available globally
 window.gsap = gsap
 window.THREE = THREE

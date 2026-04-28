@@ -1,76 +1,88 @@
 <!DOCTYPE html>
-<html lang="id" class="smooth-scroll">
+<html lang="id" class="smooth-scroll dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Toko:Kopi - Kedai Kopi Premium</title>
   <meta name="description" content="Toko:Kopi - Kedai kopi premium dengan biji kopi pilihan dan suasana yang nyaman">
-  <meta name="theme-color" content="#5c3d30">
+  <meta name="theme-color" content="#2D2424">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
   <meta property="og:title" content="Toko:Kopi - Kedai Kopi Premium">
   <meta property="og:description" content="Nikmati kelezatan kopi premium dengan biji pilihan dari petani lokal">
   <meta property="og:type" content="website">
 </head>
-<body class="dark">
+<body class="bg-lattee-50 dark:bg-espresso-950 text-espresso-900 dark:text-lattee-100">
   <!-- Loading Screen -->
   <div class="loading-screen">
     <div class="loading-text">TOKO:KOPI</div>
     <div class="loading-bar mt-4">
-      <div class="w-48 md:w-64 h-1 bg-coffee-700 rounded-full overflow-hidden">
-        <div class="loading-progress h-full bg-gold transition-all duration-300" style="width: 0%"></div>
+      <div class="w-48 md:w-64 h-1 bg-espresso-800 rounded-full overflow-hidden">
+        <div class="loading-progress h-full bg-latte-300" style="width: 0%"></div>
       </div>
     </div>
   </div>
 
   <!-- Mobile Menu Drawer -->
   <div id="mobile-menu" class="mobile-menu fixed inset-0 z-50 pointer-events-none">
-    <div class="menu-overlay absolute inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300" onclick="closeMobileMenu()"></div>
-    <div class="menu-drawer absolute right-0 top-0 bottom-0 w-72 max-w-[85vw] bg-coffee-50 dark:bg-coffee-900 transform translate-x-full transition-transform duration-300 shadow-xl">
+    <div class="menu-overlay absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300" onclick="closeMobileMenu()"></div>
+    <div class="menu-drawer absolute right-0 top-0 bottom-0 w-72 max-w-[85vw] bg-lattee-50 dark:bg-espresso-900 transform translate-x-full transition-transform duration-300 shadow-2xl">
       <div class="p-6">
         <div class="flex justify-between items-center mb-8">
-          <span class="text-xl font-display font-bold text-coffee-800 dark:text-coffee-100">Menu</span>
-          <button onclick="closeMobileMenu()" class="p-2">
-            <svg class="w-6 h-6 text-coffee-600 dark:text-coffee-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span class="text-xl font-display font-bold text-espresso-900 dark:text-lattee-100">Menu</span>
+          <button onclick="closeMobileMenu()" class="p-2 rounded-full hover:bg-lattee-200 dark:hover:bg-espresso-800 transition-colors">
+            <svg class="w-6 h-6 text-espresso-600 dark:text-lattee-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
         </div>
-        <nav class="flex flex-col space-y-4">
-          <a href="#home" onclick="closeMobileMenu()" class="text-lg text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors py-2">Beranda</a>
-          <a href="#about" onclick="closeMobileMenu()" class="text-lg text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors py-2">Tentang</a>
-          <a href="#menu" onclick="closeMobileMenu()" class="text-lg text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors py-2">Menu</a>
-          <a href="#gallery" onclick="closeMobileMenu()" class="text-lg text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors py-2">Gallery</a>
-          <a href="#reservation" onclick="closeMobileMenu()" class="text-lg text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors py-2">Reservasi</a>
-          <a href="#contact" onclick="closeMobileMenu()" class="text-lg text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors py-2">Kontak</a>
+        <nav class="flex flex-col space-y-2">
+          <a href="#home" onclick="closeMobileMenu()" class="px-4 py-3 text-lg text-espresso-700 dark:text-lattee-200 hover:bg-latte-300/30 rounded-xl transition-colors">Beranda</a>
+          <a href="#about" onclick="closeMobileMenu()" class="px-4 py-3 text-lg text-espresso-700 dark:text-lattee-200 hover:bg-latte-300/30 rounded-xl transition-colors">Tentang</a>
+          <a href="#menu" onclick="closeMobileMenu()" class="px-4 py-3 text-lg text-espresso-700 dark:text-lattee-200 hover:bg-latte-300/30 rounded-xl transition-colors">Menu</a>
+          <a href="#gallery" onclick="closeMobileMenu()" class="px-4 py-3 text-lg text-espresso-700 dark:text-lattee-200 hover:bg-latte-300/30 rounded-xl transition-colors">Gallery</a>
+          <a href="#testimonials" onclick="closeMobileMenu()" class="px-4 py-3 text-lg text-espresso-700 dark:text-lattee-200 hover:bg-latte-300/30 rounded-xl transition-colors">Testimoni</a>
+          <a href="#reservation" onclick="closeMobileMenu()" class="px-4 py-3 text-lg text-espresso-700 dark:text-lattee-200 hover:bg-latte-300/30 rounded-xl transition-colors">Reservasi</a>
+          <a href="#contact" onclick="closeMobileMenu()" class="px-4 py-3 text-lg text-espresso-700 dark:text-lattee-200 hover:bg-latte-300/30 rounded-xl transition-colors">Kontak</a>
         </nav>
-        <div class="mt-8 pt-6 border-t border-coffee-200 dark:border-coffee-700">
-          <div class="theme-toggle !inline-flex" aria-label="Toggle dark mode"></div>
-          <span class="ml-3 text-coffee-600 dark:text-coffee-300">Mode Gelap</span>
+        <div class="mt-8 pt-6 border-t border-espresso-200 dark:border-espresso-700">
+          <div class="flex items-center justify-between">
+            <span class="text-espresso-600 dark:text-lattee-300">Mode Gelap</span>
+            <div class="theme-toggle" aria-label="Toggle dark mode"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-float hidden md:flex" aria-label="Chat WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
   <!-- Sticky Header -->
-  <header class="sticky-header fixed top-0 left-0 right-0 z-40 px-4 md:px-8 lg:px-12 py-3 md:py-4 flex items-center justify-between transition-all duration-300">
-    <a href="/" class="text-xl md:text-2xl font-display font-bold text-coffee-800 dark:text-coffee-100 interactive">
+  <header class="sticky-header fixed top-0 left-0 right-0 z-40 px-4 md:px-8 py-3 flex items-center justify-between transition-all duration-300">
+    <!-- Logo -->
+    <a href="/" class="text-xl md:text-2xl font-display font-bold text-espresso-900 dark:text-lattee-100 interactive">
       Toko:Kopi
     </a>
     
     <!-- Desktop Navigation -->
     <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-      <a href="#home" class="text-sm xl:text-base text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors interactive">Beranda</a>
-      <a href="#about" class="text-sm xl:text-base text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors interactive">Tentang</a>
-      <a href="#menu" class="text-sm xl:text-base text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors interactive">Menu</a>
-      <a href="#gallery" class="text-sm xl:text-base text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors interactive">Gallery</a>
-      <a href="#reservation" class="text-sm xl:text-base text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors interactive">Reservasi</a>
-      <a href="#contact" class="text-sm xl:text-base text-coffee-700 dark:text-coffee-200 hover:text-coffee-900 dark:hover:text-coffee-50 transition-colors interactive">Kontak</a>
+      <a href="#home" class="text-sm xl:text-base text-espresso-700 dark:text-lattee-200 hover:text-espresso-900 dark:hover:text-lattee-50 transition-colors">Beranda</a>
+      <a href="#about" class="text-sm xl:text-base text-espresso-700 dark:text-lattee-200 hover:text-espresso-900 dark:hover:text-lattee-50 transition-colors">Tentang</a>
+      <a href="#menu" class="text-sm xl:text-base text-espresso-700 dark:text-lattee-200 hover:text-espresso-900 dark:hover:text-lattee-50 transition-colors">Menu</a>
+      <a href="#gallery" class="text-sm xl:text-base text-espresso-700 dark:text-lattee-200 hover:text-espresso-900 dark:hover:text-lattee-50 transition-colors">Gallery</a>
+      <a href="#testimonials" class="text-sm xl:text-base text-espresso-700 dark:text-lattee-200 hover:text-espresso-900 dark:hover:text-lattee-50 transition-colors">Testimoni</a>
+      <a href="#reservation" class="text-sm xl:text-base text-espresso-700 dark:text-lattee-200 hover:text-espresso-900 dark:hover:text-lattee-50 transition-colors">Reservasi</a>
     </nav>
     
+    <!-- Right Side -->
     <div class="flex items-center gap-2 md:gap-4">
-      <div class="hidden lg:block theme-toggle interactive" aria-label="Toggle dark mode"></div>
-      <button onclick="openMobileMenu()" class="lg:hidden p-2 text-coffee-800 dark:text-coffee-100">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="hidden lg:block theme-toggle" aria-label="Toggle dark mode"></div>
+      <button onclick="openMobileMenu()" class="lg:hidden p-2 rounded-full hover:bg-lattee-200 dark:hover:bg-espresso-800 transition-colors">
+        <svg class="w-6 h-6 text-espresso-900 dark:text-lattee-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
@@ -78,10 +90,10 @@
   </header>
 
   <main>
-    <!-- Hero Section with 3D -->
+    <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       <div id="hero-3d" class="absolute inset-0 z-0"></div>
-      <div class="parallax-bg absolute inset-0 bg-coffee-50 dark:bg-coffee-950"></div>
+      <div class="parallax-bg absolute inset-0 bg-lattee-100 dark:bg-espresso-950"></div>
       
       <!-- Floating Elements -->
       <div class="floating-element absolute top-20 left-4 md:left-10 w-20 md:w-32 h-20 md:h-32 hidden sm:block"></div>
@@ -89,11 +101,11 @@
       
       <!-- Hero Content -->
       <div class="relative z-10 text-center px-4 md:px-6 max-w-4xl mx-auto">
-        <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-4 md:mb-6 split-text">
+        <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-espresso-900 dark:text-lattee-100 mb-4 md:mb-6 split-text">
           Toko:Kopi
         </h1>
         
-        <p class="hero-subtitle text-base md:text-xl lg:text-2xl text-coffee-600 dark:text-coffee-300 mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto text-balance px-4">
+        <p class="hero-subtitle text-base md:text-xl lg:text-2xl text-espresso-600 dark:text-lattee-300 mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto text-balance px-4">
           Nikmati kelezatan kopi premium dengan biji pilihan dari petani lokal. Setiap cangkir menceritakan kisah istimewa.
         </p>
         
@@ -104,84 +116,91 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </button>
-          <button class="magnetic-btn bg-transparent border-2 border-coffee-600 text-coffee-700 dark:text-coffee-200 dark:border-coffee-400 text-sm md:text-base px-6 md:px-8 py-3 md:py-4 interactive">
+          <button class="magnetic-btn bg-transparent border-2 border-espresso-900 dark:border-lattee-300 text-espresso-900 dark:text-lattee-100 text-sm md:text-base px-6 md:px-8 py-3 md:py-4 interactive">
             Lihat Menu
           </button>
         </div>
       </div>
       
+      <!-- Scroll Indicator -->
       <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg class="w-5 h-5 md:w-6 md:h-6 text-coffee-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 md:w-6 md:h-6 text-espresso-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </div>
     </section>
 
     <!-- Infinite Marquee -->
-    <section class="py-4 md:py-8 bg-coffee-800 dark:bg-coffee-900 overflow-hidden">
+    <section class="py-4 md:py-6 bg-espresso-900 dark:bg-espresso-800 overflow-hidden">
       <div class="marquee-container">
-        <div class="marquee-content text-base md:text-xl lg:text-2xl text-coffee-100 font-display font-semibold whitespace-nowrap">
+        <div class="marquee-content text-base md:text-xl lg:text-2xl text-lattee-100 font-display font-semibold whitespace-nowrap">
           <span class="mx-4 md:mx-8">☕ Kopi Premium</span>
           <span class="mx-4 md:mx-8">•</span>
           <span class="mx-4 md:mx-8">Biji Pilihan</span>
           <span class="mx-4 md:mx-8">•</span>
           <span class="mx-4 md:mx-8">Petani Lokal</span>
           <span class="mx-4 md:mx-8">•</span>
+          <span class="mx-4 md:mx-8">Rasa Autentik</span>
+          <span class="mx-4 md:mx-8">•</span>
           <span class="mx-4 md:mx-8">☕ Kopi Premium</span>
           <span class="mx-4 md:mx-8">•</span>
           <span class="mx-4 md:mx-8">Biji Pilihan</span>
           <span class="mx-4 md:mx-8">•</span>
           <span class="mx-4 md:mx-8">Petani Lokal</span>
+          <span class="mx-4 md:mx-8">•</span>
+          <span class="mx-4 md:mx-8">Rasa Autentik</span>
           <span class="mx-4 md:mx-8">•</span>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-coffee-50 dark:bg-coffee-950 relative">
+    <section id="about" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-lattee-50 dark:bg-espresso-950 relative">
       <div class="max-w-6xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <!-- Image -->
           <div class="relative fade-in-up image-reveal tilt-container order-1 lg:order-1">
-            <div class="tilt-element rounded-xl lg:rounded-2xl overflow-hidden">
+            <div class="tilt-element rounded-xl lg:rounded-2xl overflow-hidden shadow-card">
               <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=600&fit=crop" alt="Kedai Kopi" class="w-full h-64 sm:h-80 lg:h-full object-cover" loading="eager">
             </div>
             <div class="absolute -bottom-4 md:-bottom-6 -right-4 md:right-6 glass dark:glass px-4 md:px-6 py-3 md:py-4 rounded-xl">
               <div class="flex items-center gap-2 md:gap-3">
-                <svg class="w-6 md:w-8 h-6 md:h-8 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 md:w-8 h-6 md:h-8 text-gold-500" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M2 21h18v-2H2v2zm18-9v-4H4v4c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2zM12 3a9 9 0 00-9 9v6h18V9c0-4.97-4.03-9-9-9z"/>
                 </svg>
                 <div>
-                  <div class="text-xl md:text-2xl font-display font-bold text-coffee-800 dark:text-coffee-100">15+</div>
-                  <div class="text-xs md:text-sm text-coffee-600 dark:text-coffee-300">Tahun</div>
+                  <div class="text-xl md:text-2xl font-display font-bold text-espresso-900 dark:text-lattee-100">15+</div>
+                  <div class="text-xs md:text-sm text-espresso-600 dark:text-lattee-300">Tahun</div>
                 </div>
               </div>
             </div>
           </div>
           
+          <!-- Content -->
           <div class="fade-in-up order-2 lg:order-2">
-            <span class="text-gold font-medium text-sm md:text-base">Tentang Kami</span>
-            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-coffee-900 dark:text-coffee-100 mt-1 md:mt-2 mb-4 md:mb-6">
+            <span class="text-gold-500 font-medium text-sm md:text-base">Tentang Kami</span>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-espresso-900 dark:text-lattee-100 mt-1 md:mt-2 mb-4 md:mb-6">
               Cerita di Balik<br>Cangkir Kopi Anda
             </h2>
-            <p class="text-coffee-600 dark:text-coffee-300 text-sm md:text-lg mb-4 md:mb-6">
+            <p class="text-espresso-600 dark:text-lattee-300 text-sm md:text-lg mb-4 md:mb-6">
               Toko:Kopi lahir dari semangat untuk menghadirkan kopi berkualitas tinggi kepada pecinta kopi di seluruh Indonesia.
             </p>
-            <p class="text-coffee-600 dark:text-coffee-300 text-sm md:text-lg mb-6 md:mb-8">
+            <p class="text-espresso-600 dark:text-lattee-300 text-sm md:text-lg mb-6 md:mb-8">
               Setiap cangkir kopi adalah perpaduan sempurna antara seni penyeduhan dan kualitas bahan pilihan.
             </p>
             
             <div class="grid grid-cols-3 gap-4 md:gap-6">
               <div class="text-center">
-                <div class="stat-number text-2xl md:text-3xl lg:text-4xl text-coffee-800 dark:text-coffee-100" data-count="50">0</div>
-                <div class="text-xs md:text-sm text-coffee-600 dark:text-coffee-300 mt-1">Menu</div>
+                <div class="stat-number text-2xl md:text-3xl lg:text-4xl" data-count="50">0</div>
+                <div class="text-xs md:text-sm text-espresso-500 dark:text-lattee-400 mt-1">Menu</div>
               </div>
               <div class="text-center">
-                <div class="stat-number text-2xl md:text-3xl lg:text-4xl text-coffee-800 dark:text-coffee-100" data-count="10000">0</div>
-                <div class="text-xs md:text-sm text-coffee-600 dark:text-coffee-300 mt-1">Pelanggan</div>
+                <div class="stat-number text-2xl md:text-3xl lg:text-4xl" data-count="10000">0</div>
+                <div class="text-xs md:text-sm text-espresso-500 dark:text-lattee-400 mt-1">Pelanggan</div>
               </div>
               <div class="text-center">
-                <div class="stat-number text-2xl md:text-3xl lg:text-4xl text-coffee-800 dark:text-coffee-100" data-count="98">0</div>
-                <div class="text-xs md:text-sm text-coffee-600 dark:text-coffee-300 mt-1">% Puas</div>
+                <div class="stat-number text-2xl md:text-3xl lg:text-4xl" data-count="98">0</div>
+                <div class="text-xs md:text-sm text-espresso-500 dark:text-lattee-400 mt-1">% Puas</div>
               </div>
             </div>
           </div>
@@ -189,111 +208,117 @@
       </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-coffee-100 dark:bg-coffee-900">
+    <!-- Menu Section with Filters -->
+    <section id="menu" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-lattee-100 dark:bg-espresso-900">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-8 md:mb-12 lg:mb-16">
-          <span class="text-gold font-medium text-sm md:text-base">Menu Kami</span>
-          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-coffee-900 dark:text-coffee-100 mt-1 md:mt-2">
+          <span class="text-gold-500 font-medium text-sm md:text-base">Menu Kami</span>
+          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-espresso-900 dark:text-lattee-100 mt-1 md:mt-2">
             Pilihan Kopi Premium
           </h2>
         </div>
         
-        <!-- Category Tabs -->
+        <!-- Category Filters -->
         <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-8">
-          <button onclick="filterMenu('all')" class="menu-filter active px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-medium transition-all bg-coffee-700 text-coffee-50">Semua</button>
-          <button onclick="filterMenu('hot')" class="menu-filter px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-medium transition-all bg-coffee-200 dark:bg-coffee-800 text-coffee-700 dark:text-coffee-200">Kopi Panas</button>
-          <button onclick="filterMenu('cold')" class="menu-filter px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-medium transition-all bg-coffee-200 dark:bg-coffee-800 text-coffee-700 dark:text-coffee-200">Kopi Dingin</button>
+          <button onclick="filterMenu('all')" class="menu-filter active px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-medium bg-espresso-900 text-lattee-100">Semua</button>
+          <button onclick="filterMenu('beans')" class="menu-filter px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-medium bg-lattee-200 dark:bg-espresso-800 text-espresso-700 dark:text-lattee-200">Beans</button>
+          <button onclick="filterMenu('drink')" class="menu-filter px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-medium bg-lattee-200 dark:bg-espresso-800 text-espresso-700 dark:text-lattee-200">Drink</button>
+          <button onclick="filterMenu('food')" class="menu-filter px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-medium bg-lattee-200 dark:bg-espresso-800 text-espresso-700 dark:text-lattee-200">Food</button>
         </div>
         
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8" id="menu-grid">
-          <!-- Menu Items -->
-          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="hot">
+          <!-- Menu Items - Beans -->
+          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="beans">
+            <div class="gradient-card-content">
+              <div class="relative rounded-xl overflow-hidden mb-3 md:mb-4 aspect-square">
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=400&fit=crop" alt="Coffee Beans" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute top-2 md:top-4 right-2 md:right-4 glass dark:glass px-2 md:px-3 py-1 rounded-full">
+                  <span class="text-xs md:text-sm font-medium">Best Seller</span>
+                </div>
+              </div>
+              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold mb-1 md:mb-2">Premium Beans</h3>
+              <p class="text-espresso-600 dark:text-lattee-300 text-xs md:text-sm mb-3 md:mb-4">Biji kopi arabika premium</p>
+              <div class="flex items-center justify-between">
+                <span class="text-base md:text-xl font-bold text-gold-500">Rp 85.000</span>
+                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm">Pesan</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="beans">
             <div class="gradient-card-content">
               <div class="relative rounded-xl overflow-hidden mb-3 md:mb-4 aspect-square">
                 <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=400&fit=crop" alt="Espresso" class="w-full h-full object-cover" loading="lazy">
-                <div class="absolute top-2 md:top-4 right-2 md:right-4 glass dark:glass px-2 md:px-3 py-1 rounded-full">
-                  <span class="text-xs md:text-sm text-coffee-800 dark:text-coffee-100 font-medium">Best</span>
-                </div>
               </div>
-              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Classic Espresso</h3>
-              <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm mb-3 md:mb-4">Kopi hitam pekat</p>
+              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold mb-1 md:mb-2">House Blend</h3>
+              <p class="text-espresso-600 dark:text-lattee-300 text-xs md:text-sm mb-3 md:mb-4">Campuran khas toko</p>
               <div class="flex items-center justify-between">
-                <span class="text-base md:text-xl font-bold text-gold">Rp 25.000</span>
-                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm interactive">Pesan</button>
+                <span class="text-base md:text-xl font-bold text-gold-500">Rp 65.000</span>
+                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm">Pesan</button>
               </div>
             </div>
           </div>
           
-          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="hot">
+          <!-- Menu Items - Drink -->
+          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="drink">
             <div class="gradient-card-content">
               <div class="relative rounded-xl overflow-hidden mb-3 md:mb-4 aspect-square">
                 <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53b?w=400&h=400&fit=crop" alt="Cappuccino" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute top-2 md:top-4 right-2 md:right-4 glass dark:glass px-2 md:px-3 py-1 rounded-full">
+                  <span class="text-xs md:text-sm font-medium">Favorit</span>
+                </div>
               </div>
-              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Creamy Cappuccino</h3>
-              <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm mb-3 md:mb-4">Espresso + susu foam</p>
+              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold mb-1 md:mb-2">Cappuccino</h3>
+              <p class="text-espresso-600 dark:text-lattee-300 text-xs md:text-sm mb-3 md:mb-4">Kopi dengan susu foam</p>
               <div class="flex items-center justify-between">
-                <span class="text-base md:text-xl font-bold text-gold">Rp 32.000</span>
-                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm interactive">Pesan</button>
+                <span class="text-base md:text-xl font-bold text-gold-500">Rp 32.000</span>
+                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm">Pesan</button>
               </div>
             </div>
           </div>
           
-          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="cold">
+          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="drink">
             <div class="gradient-card-content">
               <div class="relative rounded-xl overflow-hidden mb-3 md:mb-4 aspect-square">
                 <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d35a?w=400&h=400&fit=crop" alt="Cold Brew" class="w-full h-full object-cover" loading="lazy">
                 <div class="absolute top-2 md:top-4 right-2 md:right-4 glass dark:glass px-2 md:px-3 py-1 rounded-full">
-                  <span class="text-xs md:text-sm text-coffee-800 dark:text-coffee-100 font-medium">Segar</span>
+                  <span class="text-xs md:text-sm font-medium">Segar</span>
                 </div>
               </div>
-              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Cold Brew</h3>
-              <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm mb-3 md:mb-4">Kopi dingin</p>
+              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold mb-1 md:mb-2">Cold Brew</h3>
+              <p class="text-espresso-600 dark:text-lattee-300 text-xs md:text-sm mb-3 md:mb-4">Kopi dingin seduh</p>
               <div class="flex items-center justify-between">
-                <span class="text-base md:text-xl font-bold text-gold">Rp 28.000</span>
-                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm interactive">Pesan</button>
+                <span class="text-base md:text-xl font-bold text-gold-500">Rp 28.000</span>
+                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm">Pesan</button>
               </div>
             </div>
           </div>
           
-          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="hot">
+          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="drink">
             <div class="gradient-card-content">
               <div class="relative rounded-xl overflow-hidden mb-3 md:mb-4 aspect-square">
                 <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba2dba5?w=400&h=400&fit=crop" alt="Latte" class="w-full h-full object-cover" loading="lazy">
               </div>
-              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Vanilla Latte</h3>
-              <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm mb-3 md:mb-4">Espresso + vanilla</p>
+              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold mb-1 md:mb-2">Vanilla Latte</h3>
+              <p class="text-espresso-600 dark:text-lattee-300 text-xs md:text-sm mb-3 md:mb-4">Kopi + vanilla</p>
               <div class="flex items-center justify-between">
-                <span class="text-base md:text-xl font-bold text-gold">Rp 35.000</span>
-                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm interactive">Pesan</button>
+                <span class="text-base md:text-xl font-bold text-gold-500">Rp 35.000</span>
+                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm">Pesan</button>
               </div>
             </div>
           </div>
           
-          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="hot">
+          <!-- Menu Items - Food -->
+          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="food">
             <div class="gradient-card-content">
               <div class="relative rounded-xl overflow-hidden mb-3 md:mb-4 aspect-square">
-                <img src="https://images.unsplash.com/photo-1504630083234-14187a9df0f5?w=400&h=400&fit=crop" alt="Mocha" class="w-full h-full object-cover" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=400&fit=crop" alt="Croissant" class="w-full h-full object-cover" loading="lazy">
               </div>
-              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Rich Mocha</h3>
-              <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm mb-3 md:mb-4">Kopi + coklat</p>
+              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold mb-1 md:mb-2">Croissant</h3>
+              <p class="text-espresso-600 dark:text-lattee-300 text-xs md:text-sm mb-3 md:mb-4">Kue klasik Prancis</p>
               <div class="flex items-center justify-between">
-                <span class="text-base md:text-xl font-bold text-gold">Rp 38.000</span>
-                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm interactive">Pesan</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="gradient-card p-4 md:p-6 fade-in-up" data-category="cold">
-            <div class="gradient-card-content">
-              <div class="relative rounded-xl overflow-hidden mb-3 md:mb-4 aspect-square">
-                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050e84?w=400&h=400&fit=crop" alt="Americano" class="w-full h-full object-cover" loading="lazy">
-              </div>
-              <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Americano</h3>
-              <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm mb-3 md:mb-4">Espresso + air</p>
-              <div class="flex items-center justify-between">
-                <span class="text-base md:text-xl font-bold text-gold">Rp 22.000</span>
-                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm interactive">Pesan</button>
+                <span class="text-base md:text-xl font-bold text-gold-500">Rp 25.000</span>
+                <button class="magnetic-btn px-3 md:px-4 py-2 text-xs md:text-sm">Pesan</button>
               </div>
             </div>
           </div>
@@ -302,33 +327,33 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-coffee-50 dark:bg-coffee-950">
+    <section id="gallery" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-lattee-50 dark:bg-espresso-950">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-8 md:mb-12 lg:mb-16">
-          <span class="text-gold font-medium text-sm md:text-base">Gallery</span>
-          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-coffee-900 dark:text-coffee-100 mt-1 md:mt-2">
+          <span class="text-gold-500 font-medium text-sm md:text-base">Gallery</span>
+          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-espresso-900 dark:text-lattee-100 mt-1 md:mt-2">
             Momen di Toko:Kopi
           </h2>
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
           <div class="gallery-item aspect-square rounded-lg overflow-hidden cursor-pointer fade-in-up" onclick="openGallery(0)">
-            <img src="https://images.unsplash.com/photo-1501339847302-9a4b87030454?w=400&h=400&fit=crop" alt="Gallery 1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1501339847302-9a4b87030454?w=400&h=400&fit=crop" alt="Gallery" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
           </div>
           <div class="gallery-item aspect-square rounded-lg overflow-hidden cursor-pointer fade-in-up" onclick="openGallery(1)">
-            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&h=400&fit=crop" alt="Gallery 2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&h=400&fit=crop" alt="Gallery" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
           </div>
           <div class="gallery-item aspect-square rounded-lg overflow-hidden cursor-pointer fade-in-up" onclick="openGallery(2)">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop" alt="Gallery 3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop" alt="Gallery" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
           </div>
           <div class="gallery-item aspect-square rounded-lg overflow-hidden cursor-pointer fade-in-up" onclick="openGallery(3)">
-            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&h=400&fit=crop" alt="Gallery 4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&h=400&fit=crop" alt="Gallery" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
           </div>
           <div class="gallery-item aspect-square rounded-lg overflow-hidden cursor-pointer fade-in-up" onclick="openGallery(4)">
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&h=400&fit=crop" alt="Gallery 5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&h=400&fit=crop" alt="Gallery" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
           </div>
           <div class="gallery-item aspect-square rounded-lg overflow-hidden cursor-pointer fade-in-up" onclick="openGallery(5)">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop" alt="Gallery 6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop" alt="Gallery" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy">
           </div>
         </div>
       </div>
@@ -354,217 +379,223 @@
       </button>
     </div>
 
-    <!-- Reservation Section -->
-    <section id="reservation" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-coffee-800 dark:bg-coffee-950">
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-espresso-900 dark:bg-espresso-800">
       <div class="max-w-4xl mx-auto text-center">
-        <span class="text-gold font-medium text-sm md:text-base">Reservasi</span>
-        <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-coffee-100 mt-1 md:mt-2 mb-4 md:mb-6">
+        <span class="text-gold-500 font-medium text-sm md:text-base">Testimoni</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-lattee-100 mt-1 md:mt-2 mb-8 md:mb-12">
+          Apa Kata Pelanggan
+        </h2>
+        
+        <!-- Testimonial Slider -->
+        <div class="relative overflow-hidden">
+          <div class="testimonial-slide active">
+            <div class="glass dark:glass p-6 md:p-8 rounded-2xl">
+              <div class="flex items-center gap-1 mb-4 justify-center">
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="text-lattee-100 text-sm md:text-lg mb-6">"Kopi di Toko:Kopi benar-benar berbeda. Rasanya authentic dan konsisten. Setiap kali datang selalu memuaskan!"</p>
+              <div class="flex items-center justify-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-latte-300 flex items-center justify-center">
+                  <span class="text-espresso-900 font-bold">AS</span>
+                </div>
+                <div class="text-left">
+                  <div class="font-medium text-lattee-100">Andreas Susilo</div>
+                  <div class="text-sm text-lattee-300">Pelanggan Reguler</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide">
+            <div class="glass dark:glass p-6 md:p-8 rounded-2xl">
+              <div class="flex items-center gap-1 mb-4 justify-center">
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="text-lattee-100 text-sm md:text-lg mb-6">"Tempat favorit untuk nongkrong. Suasananya cozy dan kopinya sangat enak. Recommended!"</p>
+              <div class="flex items-center justify-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-latte-300 flex items-center justify-center">
+                  <span class="text-espresso-900 font-bold">PW</span>
+                </div>
+                <div class="text-left">
+                  <div class="font-medium text-lattee-100">Putri Wulandari</div>
+                  <div class="text-sm text-lattee-300">Influencer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide">
+            <div class="glass dark:glass p-6 md:p-8 rounded-2xl">
+              <div class="flex items-center gap-1 mb-4 justify-center">
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="text-lattee-100 text-sm md:text-lg mb-6">"Sebagai barista, saya sangat menghargai kualitas biji kopinya. Mereka benar-benar memperhatikan setiap细节nya."</p>
+              <div class="flex items-center justify-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-latte-300 flex items-center justify-center">
+                  <span class="text-espresso-900 font-bold">BS</span>
+                </div>
+                <div class="text-left">
+                  <div class="font-medium text-lattee-100">Budi Santoso</div>
+                  <div class="text-sm text-lattee-300">Barista Pro</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="flex justify-center gap-4 mt-6">
+          <button id="testimonial-prev" class="w-10 h-10 rounded-full border border-lattee-300 text-lattee-300 hover:bg-lattee-300 hover:text-espresso-900 transition-colors flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button id="testimonial-next" class="w-10 h-10 rounded-full border border-lattee-300 text-lattee-300 hover:bg-lattee-300 hover:text-espresso-900 transition-colors flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-espresso-900 dark:bg-espresso-950">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-gold-500 font-medium text-sm md:text-base">Reservasi</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-lattee-100 mt-1 md:mt-2 mb-4 md:mb-6">
           Pesan Meja Sekarang
         </h2>
-        <p class="text-coffee-300 text-sm md:text-lg mb-8 md:mb-10 max-w-xl mx-auto">
-          Ingin menikmati kopi di tempat kami? Pesan meja terlebih dahulu.
+        <p class="text-lattee-300 text-sm md:text-lg mb-8 md:mb-10 max-w-xl mx-auto">
+          Ingin menikmati kopi di tempat kami? Pesan meja terlebih dahulu untuk memastikan tempat tersedia.
         </p>
         
         <form class="max-w-md mx-auto space-y-4 md:space-y-6 text-left" onsubmit="submitReservation(event)">
           <div>
-            <label class="block text-coffee-200 text-sm mb-2">Nama Lengkap</label>
-            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-coffee-700 text-coffee-100 border border-coffee-600 focus:border-gold focus:outline-none transition-colors" placeholder="Nama Anda">
+            <label class="block text-lattee-200 text-sm mb-2">Nama Lengkap</label>
+            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-espresso-800 text-lattee-100 border border-espresso-700 focus:border-gold-500 focus:outline-none transition-colors" placeholder="Nama Anda">
           </div>
           <div>
-            <label class="block text-coffee-200 text-sm mb-2">Nomor Telepon</label>
-            <input type="tel" required class="w-full px-4 py-3 rounded-lg bg-coffee-700 text-coffee-100 border border-coffee-600 focus:border-gold focus:outline-none transition-colors" placeholder="0812 3456 7890">
+            <label class="block text-lattee-200 text-sm mb-2">Nomor WhatsApp</label>
+            <input type="tel" required class="w-full px-4 py-3 rounded-lg bg-espresso-800 text-lattee-100 border border-espresso-700 focus:border-gold-500 focus:outline-none transition-colors" placeholder="0812 3456 7890">
           </div>
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="block text-coffee-200 text-sm mb-2">Tanggal</label>
-              <input type="date" required class="w-full px-4 py-3 rounded-lg bg-coffee-700 text-coffee-100 border border-coffee-600 focus:border-gold focus:outline-none transition-colors">
+              <label class="block text-lattee-200 text-sm mb-2">Tanggal</label>
+              <input type="date" required class="w-full px-4 py-3 rounded-lg bg-espresso-800 text-lattee-100 border border-espresso-700 focus:border-gold-500 focus:outline-none transition-colors">
             </div>
             <div>
-              <label class="block text-coffee-200 text-sm mb-2">Jam</label>
-              <input type="time" required class="w-full px-4 py-3 rounded-lg bg-coffee-700 text-coffee-100 border border-coffee-600 focus:border-gold focus:outline-none transition-colors">
+              <label class="block text-lattee-200 text-sm mb-2">Jam</label>
+              <input type="time" required class="w-full px-4 py-3 rounded-lg bg-espresso-800 text-lattee-100 border border-espresso-700 focus:border-gold-500 focus:outline-none transition-colors">
             </div>
           </div>
           <div>
-            <label class="block text-coffee-200 text-sm mb-2">Jumlah Orang</label>
-            <select class="w-full px-4 py-3 rounded-lg bg-coffee-700 text-coffee-100 border border-coffee-600 focus:border-gold focus:outline-none transition-colors">
-              <option value="1">1 Orang</option>
-              <option value="2" selected>2 Orang</option>
-              <option value="3">3 Orang</option>
-              <option value="4">4 Orang</option>
-              <option value="5">5 Orang</option>
-              <option value="6">6+ Orang</option>
+            <label class="block text-lattee-200 text-sm mb-2">Jumlah Orang</label>
+            <select class="w-full px-4 py-3 rounded-lg bg-espresso-800 text-lattee-100 border border-espresso-700 focus:border-gold-500 focus:outline-none transition-colors">
+              <option>1 Orang</option>
+              <option selected>2 Orang</option>
+              <option>3 Orang</option>
+              <option>4 Orang</option>
+              <option>5+ Orang</option>
             </select>
           </div>
-          <button type="submit" class="magnetic-btn w-full text-base md:text-lg px-8 py-4 interactive">
-            Pesan Meja
+          <button type="submit" class="magnetic-btn w-full text-base md:text-lg px-8 py-4">
+            Pesan via WhatsApp
           </button>
         </form>
       </div>
     </section>
 
     <!-- Stats Section -->
-    <section id="stats" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-coffee-800 dark:bg-coffee-950">
+    <section class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-espresso-800 dark:bg-espresso-900">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
           <div class="fade-in-up">
-            <div class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-coffee-100 mb-1 md:mb-2">15+</div>
-            <div class="text-coffee-300 text-sm md:text-base">Tahun</div>
+            <div class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-lattee-100 mb-1 md:mb-2">15+</div>
+            <div class="text-lattee-300 text-sm md:text-base">Tahun</div>
           </div>
           <div class="fade-in-up">
-            <div class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-coffee-100 mb-1 md:mb-2">50+</div>
-            <div class="text-coffee-300 text-sm md:text-base">Menu</div>
+            <div class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-lattee-100 mb-1 md:mb-2">50+</div>
+            <div class="text-lattee-300 text-sm md:text-base">Menu</div>
           </div>
           <div class="fade-in-up">
-            <div class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-coffee-100 mb-1 md:mb-2">10K+</div>
-            <div class="text-coffee-300 text-sm md:text-base">Pelanggan</div>
+            <div class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-lattee-100 mb-1 md:mb-2">10K+</div>
+            <div class="text-lattee-300 text-sm md:text-base">Pelanggan</div>
           </div>
           <div class="fade-in-up">
-            <div class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-coffee-100 mb-1 md:mb-2">20+</div>
-            <div class="text-coffee-300 text-sm md:text-base">Cabang</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-coffee-50 dark:bg-coffee-900">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-8 md:mb-12 lg:mb-16">
-          <span class="text-gold font-medium text-sm md:text-base">Testimoni</span>
-          <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-coffee-900 dark:text-coffee-100 mt-1 md:mt-2">
-            Apa Kata Pelanggan
-          </h2>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-          <div class="glass dark:glass p-4 md:p-6 lg:p-8 rounded-xl lg:rounded-2xl fade-in-up">
-            <div class="flex items-center gap-1 mb-3 md:mb-4">
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p class="text-coffee-700 dark:text-coffee-200 text-sm md:text-base mb-3 md:mb-4">"Kopi di Toko:Kopi benar-benar berbeda. Rasanya authentic!"</p>
-            <div class="flex items-center gap-2 md:gap-3">
-              <div class="w-10 md:w-12 h-10 md:h-12 rounded-full bg-coffee-300 flex items-center justify-center">
-                <span class="text-coffee-700 font-bold text-sm md:text-base">AS</span>
-              </div>
-              <div>
-                <div class="font-medium text-coffee-900 dark:text-coffee-100 text-sm md:text-base">Andreas</div>
-                <div class="text-xs md:text-sm text-coffee-500">Pelanggan</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="glass dark:glass p-4 md:p-6 lg:p-8 rounded-xl lg:rounded-2xl fade-in-up">
-            <div class="flex items-center gap-1 mb-3 md:mb-4">
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p class="text-coffee-700 dark:text-coffee-200 text-sm md:text-base mb-3 md:mb-4">"Tempat favorit untuk nongkrong. Suasananya cozy!"</p>
-            <div class="flex items-center gap-2 md:gap-3">
-              <div class="w-10 md:w-12 h-10 md:h-12 rounded-full bg-coffee-300 flex items-center justify-center">
-                <span class="text-coffee-700 font-bold text-sm md:text-base">PW</span>
-              </div>
-              <div>
-                <div class="font-medium text-coffee-900 dark:text-coffee-100 text-sm md:text-base">Putri</div>
-                <div class="text-xs md:text-sm text-coffee-500">Influencer</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="glass dark:glass p-4 md:p-6 lg:p-8 rounded-xl lg:rounded-2xl fade-in-up md:hidden lg:block">
-            <div class="flex items-center gap-1 mb-3 md:mb-4">
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="w-4 h-4 md:w-5 md:h-5 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p class="text-coffee-700 dark:text-coffee-200 text-sm md:text-base mb-3 md:mb-4">"Kualitas biji kopinya terbaik!"</p>
-            <div class="flex items-center gap-2 md:gap-3">
-              <div class="w-10 md:w-12 h-10 md:h-12 rounded-full bg-coffee-300 flex items-center justify-center">
-                <span class="text-coffee-700 font-bold text-sm md:text-base">BS</span>
-              </div>
-              <div>
-                <div class="font-medium text-coffee-900 dark:text-coffee-100 text-sm md:text-base">Budi</div>
-                <div class="text-xs md:text-sm text-coffee-500">Barista</div>
-              </div>
-            </div>
+            <div class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-lattee-100 mb-1 md:mb-2">20+</div>
+            <div class="text-lattee-300 text-sm md:text-base">Cabang</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-coffee-100 dark:bg-coffee-900">
+    <section id="contact" class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-lattee-100 dark:bg-espresso-900">
       <div class="max-w-4xl mx-auto text-center">
-        <span class="text-gold font-medium text-sm md:text-base">Hubungi Kami</span>
-        <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-coffee-900 dark:text-coffee-100 mt-1 md:mt-2 mb-4 md:mb-6">
+        <span class="text-gold-500 font-medium text-sm md:text-base">Hubungi Kami</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-espresso-900 dark:text-lattee-100 mt-1 md:mt-2 mb-4 md:mb-6">
           Kunjungi Toko Kami
         </h2>
         
         <div class="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
           <div class="glass dark:glass p-4 md:p-6 rounded-xl fade-in-up">
-            <svg class="w-8 md:w-12 h-8 md:h-12 mx-auto mb-3 md:mb-4 text-gold svg-line-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 md:w-12 h-8 md:h-12 mx-auto mb-3 md:mb-4 text-gold-500 svg-line-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            <h3 class="text-base md:text-xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Alamat</h3>
-            <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm">Jl. Kopi No. 123<br>Jakarta</p>
+            <h3 class="text-base md:text-xl font-display font-bold mb-1 md:mb-2">Alamat</h3>
+            <p class="text-xs md:text-sm">Jl. Kopi No. 123<br>Jakarta Selatan</p>
           </div>
           
           <div class="glass dark:glass p-4 md:p-6 rounded-xl fade-in-up">
-            <svg class="w-8 md:w-12 h-8 md:h-12 mx-auto mb-3 md:mb-4 text-gold svg-line-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 md:w-12 h-8 md:h-12 mx-auto mb-3 md:mb-4 text-gold-500 svg-line-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
             </svg>
-            <h3 class="text-base md:text-xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Telepon</h3>
-            <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm">+62 812 3456 7890</p>
+            <h3 class="text-base md:text-xl font-display font-bold mb-1 md:mb-2">WhatsApp</h3>
+            <p class="text-xs md:text-sm">+62 812 3456 7890</p>
           </div>
           
           <div class="glass dark:glass p-4 md:p-6 rounded-xl fade-in-up">
-            <svg class="w-8 md:w-12 h-8 md:h-12 mx-auto mb-3 md:mb-4 text-gold svg-line-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 md:w-12 h-8 md:h-12 mx-auto mb-3 md:mb-4 text-gold-500 svg-line-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
-            <h3 class="text-base md:text-xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-1 md:mb-2">Email</h3>
-            <p class="text-coffee-600 dark:text-coffee-300 text-xs md:text-sm">hello@tokokopi.id</p>
+            <h3 class="text-base md:text-xl font-display font-bold mb-1 md:mb-2">Email</h3>
+            <p class="text-xs md:text-sm">hello@tokokopi.id</p>
           </div>
-        </div>
-        
-        <div class="flex justify-center gap-4">
-          <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-coffee-200 dark:bg-coffee-800 flex items-center justify-center text-coffee-700 dark:text-coffee-100 hover:bg-gold hover:text-white transition-colors interactive">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5 1.372 6.386-.104-.012-.207-.018-.318-.018 1.924 1.184 4.261 1.872 6.755 1.872 4.267 0 7.606-2.993 8.53-6.5-.688.227-1.464.382-2.24.382-.635 0-1.254-.06-1.848-.174-.987 2.91-3.554 5.068-6.615 5.477 2.828.865 5.487 2.676 7.109 5.206-.934-.032-1.823-.261-2.629-.509z"/></svg>
-          </a>
-          <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-coffee-200 dark:bg-coffee-800 flex items-center justify-center text-coffee-700 dark:text-coffee-100 hover:bg-gold hover:text-white transition-colors interactive">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
-          </a>
-          <a href="#" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-coffee-200 dark:bg-coffee-800 flex items-center justify-center text-coffee-700 dark:text-coffee-100 hover:bg-gold hover:text-white transition-colors interactive">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.453l-.709 3.623h-2.744v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-coffee-50 dark:bg-coffee-950">
+    <!-- Newsletter Section -->
+    <section class="py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 bg-lattee-50 dark:bg-espresso-950">
       <div class="max-w-4xl mx-auto text-center">
         <div class="glass dark:glass p-6 md:p-8 lg:p-12 rounded-xl lg:rounded-2xl">
-          <svg class="w-10 md:w-12 h-10 md:h-12 mx-auto mb-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-10 md:w-12 h-10 md:h-12 mx-auto mb-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
-          <h2 class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-coffee-900 dark:text-coffee-100 mb-3 md:mb-4">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-espresso-900 dark:text-lattee-100 mb-3 md:mb-4">
             Newsletter
           </h2>
-          <p class="text-coffee-600 dark:text-coffee-300 text-sm md:text-lg mb-6 md:mb-8 max-w-md mx-auto">
-            Dapatkan promo terbaru langsung ke email Anda.
+          <p class="text-espresso-600 dark:text-lattee-300 text-sm md:text-lg mb-6 md:mb-8 max-w-md mx-auto">
+            Dapatkan promo terbaru dan info menu baru langsung ke email Anda.
           </p>
           <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="subscribeNewsletter(event)">
-            <input type="email" required placeholder="Email Anda" class="flex-1 px-4 py-3 rounded-lg bg-coffee-100 dark:bg-coffee-800 text-coffee-900 dark:text-coffee-100 border border-coffee-300 dark:border-coffee-700 focus:border-gold focus:outline-none transition-colors">
-            <button type="submit" class="magnetic-btn px-6 md:px-8 py-3 interactive whitespace-nowrap">
+            <input type="email" required placeholder="Email Anda" class="flex-1 px-4 py-3 rounded-lg bg-lattee-100 dark:bg-espresso-800 text-espresso-900 dark:text-lattee-100 border border-lattee-200 dark:border-espresso-700 focus:border-gold-500 focus:outline-none transition-colors">
+            <button type="submit" class="magnetic-btn px-6 md:px-8 py-3 whitespace-nowrap">
               Subscribe
             </button>
           </form>
@@ -573,44 +604,44 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-coffee-900 dark:bg-coffee-950 py-8 md:py-12">
+    <footer class="bg-espresso-900 dark:bg-espresso-950 py-8 md:py-12">
       <div class="max-w-6xl mx-auto px-4 md:px-6">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
           <div class="md:col-span-2 lg:col-span-2">
-            <h3 class="text-2xl md:text-3xl font-display font-bold text-coffee-100 mb-3 md:mb-4">Toko:Kopi</h3>
-            <p class="text-coffee-300 max-w-md text-sm md:text-base">
+            <h3 class="text-2xl md:text-3xl font-display font-bold text-lattee-100 mb-3 md:mb-4">Toko:Kopi</h3>
+            <p class="text-lattee-300 max-w-md text-sm md:text-base">
               Kopi premium dari biji pilihan petani lokal Indonesia.
             </p>
           </div>
           
           <div>
-            <h4 class="text-base md:text-lg font-medium text-coffee-100 mb-3 md:mb-4">Tautan</h4>
+            <h4 class="text-base md:text-lg font-medium text-lattee-100 mb-3 md:mb-4">Tautan</h4>
             <ul class="space-y-2">
-              <li><a href="#home" class="text-coffee-300 hover:text-gold transition-colors text-sm md:text-base interactive">Beranda</a></li>
-              <li><a href="#about" class="text-coffee-300 hover:text-gold transition-colors text-sm md:text-base interactive">Tentang</a></li>
-              <li><a href="#menu" class="text-coffee-300 hover:text-gold transition-colors text-sm md:text-base interactive">Menu</a></li>
-              <li><a href="#contact" class="text-coffee-300 hover:text-gold transition-colors text-sm md:text-base interactive">Kontak</a></li>
+              <li><a href="#home" class="text-lattee-300 hover:text-gold-400 transition-colors text-sm md:text-base">Beranda</a></li>
+              <li><a href="#about" class="text-lattee-300 hover:text-gold-400 transition-colors text-sm md:text-base">Tentang</a></li>
+              <li><a href="#menu" class="text-lattee-300 hover:text-gold-400 transition-colors text-sm md:text-base">Menu</a></li>
+              <li><a href="#contact" class="text-lattee-300 hover:text-gold-400 transition-colors text-sm md:text-base">Kontak</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 class="text-base md:text-lg font-medium text-coffee-100 mb-3 md:mb-4">Sosial</h4>
+            <h4 class="text-base md:text-lg font-medium text-lattee-100 mb-3 md:mb-4">Sosial</h4>
             <div class="flex gap-3 md:gap-4">
-              <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-100 hover:bg-gold transition-colors interactive">
+              <a href="#" class="w-10 h-10 rounded-full bg-espresso-800 flex items-center justify-center text-lattee-100 hover:bg-gold-500 hover:text-white transition-colors">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5 1.372 6.386-.104-.012-.207-.018-.318-.018 1.924 1.184 4.261 1.872 6.755 1.872 4.267 0 7.606-2.993 8.53-6.5-.688.227-1.464.382-2.24.382-.635 0-1.254-.06-1.848-.174-.987 2.91-3.554 5.068-6.615 5.477 2.828.865 5.487 2.676 7.109 5.206-.934-.032-1.823-.261-2.629-.509z"/></svg>
               </a>
-              <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-100 hover:bg-gold transition-colors interactive">
+              <a href="#" class="w-10 h-10 rounded-full bg-espresso-800 flex items-center justify-center text-lattee-100 hover:bg-gold-500 hover:text-white transition-colors">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
               </a>
-              <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-100 hover:bg-gold transition-colors interactive">
+              <a href="#" class="w-10 h-10 rounded-full bg-espresso-800 flex items-center justify-center text-lattee-100 hover:bg-gold-500 hover:text-white transition-colors">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.453l-.709 3.623h-2.744v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
               </a>
             </div>
           </div>
         </div>
         
-        <div class="border-t border-coffee-800 pt-6 md:pt-8 text-center">
-          <p class="text-coffee-400 text-sm md:text-base">© 2024 Toko:Kopi. All rights reserved.</p>
+        <div class="border-t border-espresso-800 pt-6 md:pt-8 text-center">
+          <p class="text-lattee-400 text-sm md:text-base">© 2024 Toko:Kopi. All rights reserved.</p>
         </div>
       </div>
     </footer>
