@@ -1,0 +1,56 @@
+name: Auto-Merge Dependabot PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+  pull_request_target:
+    types: [opened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  auto-merge-dependabot:
+    name: Auto-merge Dependabot PR
+    runs-on: ubuntu-latest
+    if: |
+      github.actor == 'dependabot[bot]' ||
+      startsWith(github.event.pull_request.title, 'Bump')
+    steps:
+      - name: Enable auto-merge on PR
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          gh pr merge --auto "$PR_NUMBER" --squash --delete-branch 2>/dev/null || \
+          echo "Auto-merge enabled or PR already merged"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Wait for CI checks and merge
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          
+          # Wait up to 5 minutes for CI checks
+          for i in {1..10}; do
+            # Check if PR is already merged
+            STATE=$(gh pr view "$PR_NUMBER" --json state 2>/dev/null | grep -o '"MERGED"' || echo "")
+            if [ -n "$STATE" ]; then
+              echo "PR #$PR_NUMBER merged!"
+              exit 0
+            fi
+            
+            # Check if can merge now
+            CAN_MERGE=$(gh pr view "$PR_NUMBER" --json mergeable 2>/dev/null | grep -o 'true' || echo "")
+            if [ -n "$CAN_MERGE" ]; then
+              gh pr merge --admin "$PR_NUMBER" --squash --delete-branch 2>/dev/null
+              echo "PR merged!"
+              exit 0
+            fi
+            
+            echo "Waiting for CI... ($i/10)"
+            sleep 30
+          done
+          
+          echo "Auto-merge should handle it"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
